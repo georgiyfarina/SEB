@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 import time
 
 
+
 def get_mails(email_address: str, password: str, n_emails: int, unseen: bool = False):
     imap_server = 'imap.ti-edu.ch'
 
@@ -106,42 +107,29 @@ def get_assignments(email_address, password):
     search.click()
     time.sleep(5)
 
-    matches = driver.find_elements(By.TAG_NAME, value='h5')
-    due_dates = list()
-    for val in matches:
-        if "202" in val.text:
-            due_dates.append(val.text.split(",")[1].strip())
+    div_assignments = driver.find_element(By.XPATH, value="/html/body/div[2]/div[3]/div/div[2]/div/section[2]/aside/section[2]/div/div/div[1]/div[2]")
+    a_tags = div_assignments.find_elements(By.TAG_NAME, value='a')
+    assignments = list()
+    for link in a_tags:
+        aria_label = link.get_attribute('aria-label')
+        if aria_label is not None:
+            label_splitted = aria_label.split(' is due activity in ')
+            if len(label_splitted) >= 2:
 
-    matches = driver.find_elements(By.TAG_NAME, value='small')
-    subjects = list()
-    for i, val in enumerate(matches):
-        print("prova ---", val.text)
-        if len(val.text) > 3:
-            if i % 2 == 1:
-                due_dates[i-len(subjects)] += f" / {val.text}"
-            else:
-                subjects.append(val.text.replace("\"", ""))
-
-    print('ASSIGNMENTS')
-    h6_tags = driver.find_elements(By.TAG_NAME, value='h6')
-    assignments = list(filter(lambda x: 'is due' in x.text, h6_tags))
-    for i, val in enumerate(assignments):
-        assignments[i] = val.text.replace(" is due", '')
-
-    data_dicts = []
-    for i in range(len(assignments)):
-        ass_dict = {}
-        ass_dict['due_date'] = due_dates[i]
-        ass_dict['subject'] = subjects[i]
-        ass_dict['assignment_title'] = assignments[i]
-        ass_dict['assignment_desc'] = "TODO"
-        data_dicts.append(ass_dict)
-        print("\t-", subjects[i])
-        print("\t-", assignments[i])
-        print("\t-", due_dates[i])
-        print("--------------------------------------------")
-
-
+                assignment_title, rest = label_splitted[0], label_splitted[1]
+                subject = rest.split(' is due on ')[0].replace("\"", "").replace(u"\xa0", u' ')
+                due_date = rest.split(' is due on ')[1]
+                item = {
+                    'due_date': due_date,
+                    'subject': subject,
+                    'assignment_title': assignment_title,
+                    'assignment_desc': 'TODO'
+                }
+                assignments.append(item)
+                print("\t-", assignment_title)
+                print("\t-", subject)
+                print("\t-", due_date)
+                print("--------------------------------------------")
     # Open a new CSV file in write mode
     with open('C://xampp//htdocs//data//data_icorsi.csv', mode='w', newline='') as file:
 
@@ -154,6 +142,6 @@ def get_assignments(email_address, password):
         # Write the header row to the CSV
         writer.writeheader()
         # Write each dictionary in the list to the CSV
-        for row in data_dicts:
+        for row in assignments:
             print(row)
             writer.writerow(row)
