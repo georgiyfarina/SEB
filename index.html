@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FEB: Farina EZ Browsing</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 36px;
+		}
+
+		.container {
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 0 20px;
+		}
+
+		.assignments-table{
+			margin: 20px auto;
+			padding: 0 20px;
+			max-width: 1300px;
+		}
+
+		.link-section {
+			margin: 20px 0;
+		}
+
+		.link-section h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.link-section ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.link-section li {
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center;
+		}
+
+		.link-section li a {
+			color: #4CAF50;
+			font-size: 18px;
+			margin-left: 10px;
+		}
+		.table {
+		  width: 100%;
+		  border-collapse: collapse;
+		}
+
+		.table th, .table td {
+		  padding: 0.75rem;
+		  vertical-align: top;
+		  border-top: 1px solid #dee2e6;
+		}
+
+		.table th {
+		  background-color: #f8f9fa;
+		  font-weight: bold;
+		  text-align: left;
+		}
+
+		.table-striped tbody tr:nth-of-type(odd) {
+		  background-color: #f6f6f6;
+		}
+
+		.table-bordered {
+		  border: 1px solid #dee2e6;
+		}
+
+		img{
+			width: 25px;
+			height: 25px;
+		}
+
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="favicon.js"></script>
+</head>
+<body>
+	<header>
+		<h1>FEB: Farina EZ Browsing</h1>
+	</header>
+
+	<div class="container">
+		<section class="link-section">
+				<h2>SUPSI Links</h2>
+				<ul>
+					<li><img/><a href="https://www.icorsi.ch/my/" target="_blank" class="website-link">iCorsi</a> </li>
+					<li><img/><a href="https://webmail.ti-edu.ch/hpronto/" target="_blank" class="website-link">ProntoMail</a></li>
+					<li><img/><a href="https://chat.openai.com/chat" target="_blank" class="website-link">ChatGPT</a></li>
+					<li><img/><a href="https://portalestudenti.supsi.ch/Home/Index" target="_blank" class="website-link">Portale Studenti</a></li>
+				</ul>
+		</section>
+
+      	<section class="link-section">
+			<h2>Personal Links</h2>
+			<ul>
+				<li><img/><a href="https://web.whatsapp.com/" target="_blank" class="website-link">Whatsapp Web</a></li>
+				<li><img/><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="website-link">Gmail</a></li>
+				<li><img/><a href="https://sflix.to/" target="_blank" class="website-link">Sflix</a></li>
+			</ul>
+	  </section>
+	</div>
+	<section class="assignments-table">
+		<h2>My Deadlines</h2>
+		<div id="assignments-container"></div>
+		<script src="assignments_table.js"></script>
+	</section>
+	<section class="assignments-table">
+		<h2>My Emails</h2>
+		<div id="emails-container"></div>
+		<script src="emails_table.js"></script>
+	</section>
+</body>
+</html>
