@@ -1,9 +1,9 @@
 // Define the path to the CSV file
-const csvFilePath = 'data//data_emails.csv';
-console.log(csvFilePath)
+const csvFilePathEmails = 'data//data_emails.csv';
+console.log(csvFilePathEmails)
 
 // Define the column headers for the HTML table
-const tableHeaders = ['Subject', 'Sender Name', 'Sender Address', 'Content'];
+const tableHeadersEmails = ['Subject', 'Sender Name', 'Sender Address', 'Date'];
 
 // Define a function to convert CSV data to an array of objects
 function csvToArray(csvData) {
@@ -29,7 +29,7 @@ function csvToArray(csvData) {
 $(document).ready(function() {
   $.ajax({
     type: 'GET',
-    url: csvFilePath,
+    url: csvFilePathEmails,
     success: function(data) {
       const csvArray = csvToArray(data);
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
       // Add the table headers to the table
       const headerRow = $('<tr>');
-      tableHeaders.forEach(function(header) {
+      tableHeadersEmails.forEach(function(header) {
         headerRow.append($('<th>').text(header));
       });
       thead.append(headerRow);

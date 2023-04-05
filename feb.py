@@ -1,6 +1,8 @@
 import csv
 import email
 import imaplib
+import urllib
+from datetime import datetime
 from email.utils import parseaddr
 from nntplib import decode_header
 from selenium import webdriver
@@ -39,8 +41,12 @@ def get_mails(email_address: str, password: str, n_emails: int, unseen: bool = F
         from_name, from_address = parseaddr(msg['From'])
         email_dict['from_name'], email_dict['from_address'] = from_name, from_address
         print(f'From: {from_name} ({from_address})')
-        print('Content:')
-        email_dict['content'] = ''
+
+        date_str = msg['Date']
+        date_obj = datetime.fromtimestamp(email.utils.mktime_tz(email.utils.parsedate_tz(date_str)))
+        email_dict['date'] = date_obj.strftime('%d.%m.%Y %H:%M:%S')
+        print(f'Date: {date_obj}')
+
         if msg.is_multipart():
             for part in msg.walk():
                 content_type = part.get_content_type()
@@ -51,7 +57,6 @@ def get_mails(email_address: str, password: str, n_emails: int, unseen: bool = F
                     pass
                 if content_type == 'text/plain' and 'attachment' not in content_disposition:
                     print(body)
-                    email_dict['content'] += body + '\n'
         else:
             content_type = msg.get_content_type()
             try:
@@ -60,14 +65,12 @@ def get_mails(email_address: str, password: str, n_emails: int, unseen: bool = F
                 pass
             if content_type == 'text/plain':
                 print(body)
-                email_dict['content'] = body
         emails_dict_list.append(email_dict)
-
     # Open a new CSV file in write mode
-    with open('C://xampp//htdocs//data//data_emails.csv', mode='w', newline='') as file:
+    with open('data//data_emails.csv', mode='w', newline='') as file:
 
         # Define the fieldnames for the CSV
-        fieldnames = ['subject', 'from_name', 'from_address', 'content']
+        fieldnames = ['subject', 'from_name', 'from_address', 'date']
 
         # Create a new CSV writer object
         writer = csv.DictWriter(file, fieldnames=fieldnames)
@@ -81,7 +84,7 @@ def get_mails(email_address: str, password: str, n_emails: int, unseen: bool = F
     # Disconnect from the SMTP and IMAP servers
     imap_connection.logout()
 
-    with open('C://xampp//htdocs//data//data_emails.csv', newline='') as csvfile:
+    with open('data//data_emails.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             print(row)
@@ -107,7 +110,7 @@ def get_assignments(email_address, password):
     search.click()
     time.sleep(5)
 
-    div_assignments = driver.find_element(By.XPATH, value="/html/body/div[2]/div[3]/div/div[2]/div/section[2]/aside/section[2]/div/div/div[1]/div[2]")
+    div_assignments = driver.find_element(By.XPATH, value="/html/body/div[2]/div[3]/div/div[2]/div/section[2]")
     a_tags = div_assignments.find_elements(By.TAG_NAME, value='a')
     assignments = list()
     for link in a_tags:
@@ -131,7 +134,7 @@ def get_assignments(email_address, password):
                 print("\t-", due_date)
                 print("--------------------------------------------")
     # Open a new CSV file in write mode
-    with open('C://xampp//htdocs//data//data_icorsi.csv', mode='w', newline='') as file:
+    with open('data//data_icorsi.csv', mode='w', newline='') as file:
 
         # Define the fieldnames for the CSV
         fieldnames = ['due_date', 'subject', 'assignment_title', 'assignment_desc']

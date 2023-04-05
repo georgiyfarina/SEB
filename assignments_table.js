@@ -1,9 +1,9 @@
 // Define the path to the CSV file
-const csvFilePath = 'data//data_icorsi.csv';
-console.log(csvFilePath)
+const csvFilePathAssignments = 'data//data_icorsi.csv';
+console.log(csvFilePathAssignments)
 
 // Define the column headers for the HTML table
-const tableHeaders = ['Due Date', 'Subject', 'Assignment Title', 'Assignment Description'];
+const tableHeadersAssignments = ['Due Date', 'Subject', 'Assignment Title', 'Assignment Description'];
 
 // Define a function to convert CSV data to an array of objects
 function csvToArray(csvData) {
@@ -29,7 +29,7 @@ function csvToArray(csvData) {
 $(document).ready(function() {
   $.ajax({
     type: 'GET',
-    url: csvFilePath,
+    url: csvFilePathAssignments,
     success: function(data) {
       const csvArray = csvToArray(data);
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
       // Add the table headers to the table
       const headerRow = $('<tr>');
-      tableHeaders.forEach(function(header) {
+      tableHeadersAssignments.forEach(function(header) {
         headerRow.append($('<th>').text(header));
       });
       thead.append(headerRow);
