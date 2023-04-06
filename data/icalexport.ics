@@ -1,0 +1,183 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:-//Moodle Pty Ltd//NONSGML Moodle Version 2021051710.01//EN
+VERSION:2.0
+BEGIN:VEVENT
+UID:3340196@www.icorsi.ch
+SUMMARY:Assignment 05 is due
+DESCRIPTION:
+CLASS:PUBLIC
+LAST-MODIFIED:20230329T063259Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230402T220000Z
+DTEND:20230402T220000Z
+CATEGORIES:DTI.M-B4060E.1.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3295685@www.icorsi.ch
+SUMMARY:Assignment: deliver the solutions for problem set 03 is due
+DESCRIPTION:Submissions have to be performed in this way:\n\n	* One top lev
+	el folder called "PROBLEMSET_<PROBLEMSET_NR>_<LASTNAME>" that will be zippe
+	d (i.e. .ZIP FORMAT\, not tar.gz\, not .rar\, etc.) \n\n	* <problemset_nr> 
+	will be substituted with the number of the problem set you are submitting f
+	or\, i.e. problem-set 42: <problemset_nr> is replaced with "42"\n	* <lastna
+	me> will be replaced with your last name (surname)\, i.e. if you are called
+	 "Muster": <lastname> is replaced with "muster"\n	* Complete example: stude
+	nt Muster is submitting problem-set 42\, the file will be: PROBLEMSET_42_MU
+	STER.ZIP\n\n	* Each exercise must have its own folder\, this is required be
+	cause\, normally a project is composed by multiple files\, containing diffe
+	rent parts of code and it would become complicated if files relative to dif
+	ferent assignments are put in the same folder. These folders have to be nam
+	ed "ASSIGNMENT_<PROBLEMSET_NR>_<ASSIGNMENT_NR>_<LASTNAME>" \n\n	* <problems
+	et_nr> will be substituted with the number of the problem-set you are submi
+	tting for\, i.e. problem-set 42: <problemset_nr> is replaced with "42"\n	* 
+	<assignment_nr> will be replaced with the number of the assignment you are 
+	submitting\, i.e. assignment 3: <assignment_nr> is replaced with "3"\n	* <l
+	astname> will be replaced with your last name (surname)\, i.e. if you are c
+	alled "Muster": <lastname> is replaced with "muster"\n	* Complete example: 
+	student Muster is solving assignment 3 of problem-set 42\, the folder conta
+	ining its solution will be: ASSIGNMENT_42_3_MUSTER\n\n	* The main file of t
+	he exercise (i.e. the one to run\, containing '_if __name__ == "__main__":_
+	' must be called "ASSIGNMENT_<PROBLEMSET_NR>_<ASSIGNMENT_NR>_<LASTNAME>.PY"
+	 (like the folder but with .py at the end)\, other modules can be called wh
+	atever you feel like it's a good name\n\n	* <problemset_nr> will be substit
+	uted with the number of the problem-set you are submitting for\, i.e. probl
+	em-set 42: <problemset_nr> is replaced with "42"\n	* <assignment_nr> will b
+	e replaced with the number of the assignment you are submitting\, i.e. assi
+	gnment 3: <assignment_nr> is replaced with "3"\n	* <lastname> will be repla
+	ced with your last name (surname)\, i.e. if you are called "Muster": <lastn
+	ame> is replaced with "muster"\n	* Complete example: stundent Muster is sol
+	ving assignment 3 of problem-set 42\, the folder containing its solution wi
+	ll be: ASSIGNMENT_42_3_MUSTER.PY\n\nTo reiterate\, problem set 42 which has
+	 3 exercise needs to be submitted in this form by a student called Muster:\
+	n\n	* PROBLEMSET_42_MUSTER\n\n	* ASSIGNMENT_42_1_MUSTER\n\n	* ASSIGNMENT_42
+	_1_MUSTER.PY\n	* my_fancy_module.py\n\n	* ASSIGNMENT_42_2_MUSTER\n\n	* ASSI
+	GNMENT_42_2_MUSTER.PY\n	* yet_another_module.py\n\n	* ASSIGNMENT_42_3_MUSTE
+	R\n\n	* ASSIGNMENT_42_3_MUSTER.PY\n\nThe aforementioned structure will be t
+	hen compressed and submitted with the name of: PROBLEMSET_42_MUSTER.ZIP\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20230404T195342Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230405T080000Z
+DTEND:20230405T080000Z
+CATEGORIES:DTI.M-I4070E.1.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3338076@www.icorsi.ch
+SUMMARY:Assignment 2: anomaly detection with autoencoders is due
+DESCRIPTION:
+CLASS:PUBLIC
+LAST-MODIFIED:20230313T132446Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230409T215900Z
+DTEND:20230409T215900Z
+CATEGORIES:DTI.M-D4020E.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3341126@www.icorsi.ch
+SUMMARY:Assignment 06 is due
+DESCRIPTION:
+CLASS:PUBLIC
+LAST-MODIFIED:20230405T070843Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230417T220000Z
+DTEND:20230417T220000Z
+CATEGORIES:DTI.M-B4060E.1.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3340369@www.icorsi.ch
+SUMMARY:Assignment: deliver the solutions for problem set 04 is due
+DESCRIPTION:Submissions have to be performed in this way:\n\n	* One top lev
+	el folder called "PROBLEMSET_<PROBLEMSET_NR>_<LASTNAME>" that will be zippe
+	d (i.e. .ZIP FORMAT\, not tar.gz\, not .rar\, etc.) \n\n	* <problemset_nr> 
+	will be substituted with the number of the problem set you are submitting f
+	or\, i.e. problem-set 42: <problemset_nr> is replaced with "42"\n	* <lastna
+	me> will be replaced with your last name (surname)\, i.e. if you are called
+	 "Muster": <lastname> is replaced with "muster"\n	* Complete example: stude
+	nt Muster is submitting problem-set 42\, the file will be: PROBLEMSET_42_MU
+	STER.ZIP\n\n	* Each exercise must have its own folder\, this is required be
+	cause\, normally a project is composed by multiple files\, containing diffe
+	rent parts of code and it would become complicated if files relative to dif
+	ferent assignments are put in the same folder. These folders have to be nam
+	ed "ASSIGNMENT_<PROBLEMSET_NR>_<ASSIGNMENT_NR>_<LASTNAME>" \n\n	* <problems
+	et_nr> will be substituted with the number of the problem-set you are submi
+	tting for\, i.e. problem-set 42: <problemset_nr> is replaced with "42"\n	* 
+	<assignment_nr> will be replaced with the number of the assignment you are 
+	submitting\, i.e. assignment 3: <assignment_nr> is replaced with "3"\n	* <l
+	astname> will be replaced with your last name (surname)\, i.e. if you are c
+	alled "Muster": <lastname> is replaced with "muster"\n	* Complete example: 
+	student Muster is solving assignment 3 of problem-set 42\, the folder conta
+	ining its solution will be: ASSIGNMENT_42_3_MUSTER\n\n	* The main file of t
+	he exercise (i.e. the one to run\, containing '_if __name__ == "__main__":_
+	' must be called "ASSIGNMENT_<PROBLEMSET_NR>_<ASSIGNMENT_NR>_<LASTNAME>.PY"
+	 (like the folder but with .py at the end)\, other modules can be called wh
+	atever you feel like it's a good name\n\n	* <problemset_nr> will be substit
+	uted with the number of the problem-set you are submitting for\, i.e. probl
+	em-set 42: <problemset_nr> is replaced with "42"\n	* <assignment_nr> will b
+	e replaced with the number of the assignment you are submitting\, i.e. assi
+	gnment 3: <assignment_nr> is replaced with "3"\n	* <lastname> will be repla
+	ced with your last name (surname)\, i.e. if you are called "Muster": <lastn
+	ame> is replaced with "muster"\n	* Complete example: stundent Muster is sol
+	ving assignment 3 of problem-set 42\, the folder containing its solution wi
+	ll be: ASSIGNMENT_42_3_MUSTER.PY\n\nTo reiterate\, problem set 42 which has
+	 3 exercise needs to be submitted in this form by a student called Muster:\
+	n\n	* PROBLEMSET_42_MUSTER\n\n	* ASSIGNMENT_42_1_MUSTER\n\n	* ASSIGNMENT_42
+	_1_MUSTER.PY\n	* my_fancy_module.py\n\n	* ASSIGNMENT_42_2_MUSTER\n\n	* ASSI
+	GNMENT_42_2_MUSTER.PY\n	* yet_another_module.py\n\n	* ASSIGNMENT_42_3_MUSTE
+	R\n\n	* ASSIGNMENT_42_3_MUSTER.PY\n\nThe aforementioned structure will be t
+	hen compressed and submitted with the name of: PROBLEMSET_42_MUSTER.ZIP\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20230404T195301Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230419T080000Z
+DTEND:20230419T080000Z
+CATEGORIES:DTI.M-I4070E.1.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3341290@www.icorsi.ch
+SUMMARY:Assignment 07 (Dijkstra) is due
+DESCRIPTION:
+CLASS:PUBLIC
+LAST-MODIFIED:20230405T090544Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230420T220000Z
+DTEND:20230420T220000Z
+CATEGORIES:DTI.M-B4060E.1.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3341291@www.icorsi.ch
+SUMMARY:Assignment 08 (MST) is due
+DESCRIPTION:
+CLASS:PUBLIC
+LAST-MODIFIED:20230405T091126Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230425T220000Z
+DTEND:20230425T220000Z
+CATEGORIES:DTI.M-B4060E.1.23
+END:VEVENT
+BEGIN:VEVENT
+UID:3340088@www.icorsi.ch
+SUMMARY:Assignment[Optional]: deliver the solution for Pandemonium 03 is du
+	e
+	
+DESCRIPTION:Submissions have to be performed in this way:\n\n	* One top lev
+	el folder called "PANDEMONIUM_<VERSION>_<LASTNAME>" that will be zipped (i.
+	e. .ZIP FORMAT\, not tar.gz\, not .rar\, etc.) \n\n	* <version> will be sub
+	stituted with the version of the game you are submitting for\, i.e. "02" or
+	 "v2"\n	* <lastname> will be replaced with your last name (surname)\, i.e. 
+	if you are called "Muster": <lastname> is replaced with "muster"\n	* Comple
+	te example: student Muster is submitting Pandemonium 02\, the file will be:
+	 PANDEMONIUM_02_MUSTER.ZIP\n\nDeveloping the game in groups is allowed.\nIf
+	 you developed the game in a group\, write the NAMES OF THE GROUP MEMBERS I
+	N THE PANDEMONIUM.PY file.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20230404T195424Z
+DTSTAMP:20230406T110832Z
+DTSTART:20230426T080000Z
+DTEND:20230426T080000Z
+CATEGORIES:DTI.M-I4070E.1.23
+END:VEVENT
+END:VCALENDAR

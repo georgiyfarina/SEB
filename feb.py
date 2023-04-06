@@ -91,7 +91,7 @@ def get_mails(email_address: str, password: str, n_emails: int, unseen: bool = F
 
 
 def get_assignments(email_address, password):
-    PATH = "C://Users//georg//Documents//chromedriver.exe"
+    PATH = "C://Users//Gabri//Documents//chromedriver_win32//chromedriver.exe"
     serv = Service(PATH)
     driver = webdriver.Chrome(service=serv)
 
@@ -108,7 +108,7 @@ def get_assignments(email_address, password):
 
     search = driver.find_element(By.TAG_NAME, value='button')
     search.click()
-    time.sleep(5)
+    time.sleep(10)
 
     div_assignments = driver.find_element(By.XPATH, value="/html/body/div[2]/div[3]/div/div[2]/div/section[2]")
     a_tags = div_assignments.find_elements(By.TAG_NAME, value='a')
