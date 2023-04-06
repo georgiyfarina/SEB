@@ -85,7 +85,4 @@ def ics_taker(email_address, password):
         print(f"Ends: {event.end}")
         print(f"Description: {event.description}")
         print("-" * 20)
-
-if __name__ == '__main__':
-    ics_taker("miro.rava@student.supsi.ch","WISKYMIRO1111.miro")
 # crea il tuo main
