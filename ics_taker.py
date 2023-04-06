@@ -1,11 +1,13 @@
 import csv
 import email
 import imaplib
+import os
 import urllib
 from datetime import datetime
 from email.utils import parseaddr
 from nntplib import decode_header
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import requests
@@ -14,10 +16,12 @@ import ics
 import time
 
 def ics_taker(email_address, password):
+    print("Wait for the program to retrieve data:",end="")
     # FIrst part to get to the home of icorsi
-    PATH = "C://Users//Gabri//Documents//chromedriver_win32//chromedriver.exe"
-    serv = Service(PATH)
-    driver = webdriver.Chrome(service=serv)
+    options = Options()
+    options.headless = True
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    driver = webdriver.Chrome(options=options)
 
     driver.get("https://www.icorsi.ch/login/index.php")
 
@@ -29,30 +33,39 @@ def ics_taker(email_address, password):
 
     search = driver.find_element(By.ID, value='password')
     search.send_keys(password)
-
+    print(".",end="")
     search = driver.find_element(By.TAG_NAME, value='button')
     search.click()
-    time.sleep(5)
+    time.sleep(1)
+    print(".",end="")
+    time.sleep(1)
+    print(".",end="")
+    time.sleep(1)
     # --------------------------------------------------------
     cal_button = driver.find_element(By.XPATH, value='//*[@id="region-main"]/div[1]/div/div/div/div[1]/div/div/div[1]/a')
     cal_button.click()
+    print(".", end="")
     time.sleep(1)
 
     export = driver.find_element(By.XPATH, value='//*[@id="region-main"]/div/div/div[2]/div[1]')
     export.click()
+    print(".", end="")
     time.sleep(1)
 
     all = driver.find_element(By.XPATH, value='//*[@id="id_events_exportevents_all"]')
     all.click()
-    time.sleep(1)
 
-    week = driver.find_element(By.XPATH, value='// *[ @ id = "id_period_timeperiod_weeknow"]')
+    week = driver.find_element(By.XPATH, value='// *[ @ id = "id_period_timeperiod_recentupcoming"]')
     week.click()
-    time.sleep(1)
 
     get_url = driver.find_element(By.XPATH, value='//*[@id="id_generateurl"]')
     get_url.click()
-    time.sleep(5)
+    print(".", end="")
+    time.sleep(1)
+    print(".", end="")
+    time.sleep(1)
+    print(".", end="\r")
+    time.sleep(1)
 
     urll = driver.find_element(By.XPATH, value='// *[ @ id = "region-main"] / div / div / div')
     print(urll.text)
@@ -70,6 +83,9 @@ def ics_taker(email_address, password):
         print(f"{event.extra}")
         print(f"Starts: {event.begin}")
         print(f"Ends: {event.end}")
+        print(f"Description: {event.description}")
         print("-" * 20)
 
+if __name__ == '__main__':
+    ics_taker("miro.rava@student.supsi.ch","WISKYMIRO1111.miro")
 # crea il tuo main
