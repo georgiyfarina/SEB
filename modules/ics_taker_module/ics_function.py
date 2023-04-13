@@ -1,22 +1,13 @@
-import csv
-import email
-import imaplib
-import os
-import urllib
-from datetime import datetime
-from email.utils import parseaddr
-from nntplib import decode_header
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import requests
 import ics
-
 import time
 
+
 def ics_taker(email_address, password):
-    print("Wait for the program to retrieve data:",end="")
+    print("Wait for the program to retrieve data:", end="")
     # FIrst part to get to the home of icorsi
     options = Options()
     options.headless = True
@@ -33,16 +24,17 @@ def ics_taker(email_address, password):
 
     search = driver.find_element(By.ID, value='password')
     search.send_keys(password)
-    print(".",end="")
+    print(".", end="")
     search = driver.find_element(By.TAG_NAME, value='button')
     search.click()
     time.sleep(1)
-    print(".",end="")
+    print(".", end="")
     time.sleep(1)
-    print(".",end="")
+    print(".", end="")
     time.sleep(1)
     # --------------------------------------------------------
-    cal_button = driver.find_element(By.XPATH, value='//*[@id="region-main"]/div[1]/div/div/div/div[1]/div/div/div[1]/a')
+    cal_button = driver.find_element(By.XPATH,
+                                     value='//*[@id="region-main"]/div[1]/div/div/div/div[1]/div/div/div[1]/a')
     cal_button.click()
     print(".", end="")
     time.sleep(1)
@@ -71,23 +63,10 @@ def ics_taker(email_address, password):
     print(urll.text)
     url = urll.text.split(":", 1)
     url = url[1].strip()
-    #print(url)
+    # print(url)
 
     ics_file = requests.get(url)
 
     calendar = ics.Calendar(ics_file.text)
 
-    for event in calendar.events:
-        print(f"Event: {event.name}")
-        print(f"{event.categories}")
-        print(f"{event.extra}")
-        print(f"Starts: {event.begin}")
-        print(f"Ends: {event.end}")
-        print(f"Description: {event.description}")
-        print("-" * 20)
-
     return calendar
-# crea il tuo main
-if __name__ == '__main__':
-    ics_taker('gabriele.passoni@student.supsi.ch', 'Pallone22')
-
